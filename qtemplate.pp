@@ -26,6 +26,7 @@ type
     function GetTag(const TagString: String): TTagCallback;
     procedure SetTag(const TagString: String; AValue: TTagCallback);
   public
+    constructor Create;
     constructor Create(const AFileName: String);overload; virtual;
     constructor Create(const AStream: TStream);overload; virtual;
     destructor Destroy; override;
@@ -77,10 +78,9 @@ begin
   FTagMap[TagName] := AValue;
 end;
 
-constructor TQTemplate.Create(const AFileName: String);
+constructor TQTemplate.Create;
 begin
   inherited Create;
-  FileName := AFileName;
 
   FCaseSensitive := false;
   FTagMap := TCallbackMap.Create;
@@ -95,22 +95,16 @@ begin
   OnReplaceTag := @ReplaceTags;
 end;
 
+constructor TQTemplate.Create(const AFileName: String);
+begin
+  Create;
+  FileName := AFileName;
+end;
+
 constructor TQTemplate.Create(const AStream: TStream);
 begin
-    inherited Create;
+  Create;
   FStream := AStream;
-
-  FCaseSensitive := false;
-  FTagMap := TCallbackMap.Create;
-
-  StartDelimiter := '{+';
-  EndDelimiter := '+}';
-  ParamStartDelimiter := '[-';
-  ParamValueSeparator := '=';
-  ParamEndDelimiter := '-]';
-
-  AllowTagParams := true;
-  OnReplaceTag := @ReplaceTags;
 end;
 
 destructor TQTemplate.Destroy;

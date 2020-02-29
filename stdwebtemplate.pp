@@ -13,9 +13,9 @@ type
 
   TStdWebTemplate = class(TQTemplate)
   private
-    function ReplaceCSS(const ATag: String; AParams: TStringList): String;
-    function ReplaceJS(const ATag: String; AParams: TStringList): String;
-    function ReplaceURL(const ATag: String; AParams: TStringList): String;
+    function ReplaceCSS(const {%H-}ATag: String; AParams: TStringList): String;
+    function ReplaceJS(const {%H-}ATag: String; AParams: TStringList): String;
+    function ReplaceURL(const {%H-}ATag: String; AParams: TStringList): String;
   public
     constructor Create(const AFileName: String); override;
   end;
