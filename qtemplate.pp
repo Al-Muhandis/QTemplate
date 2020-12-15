@@ -5,7 +5,7 @@ unit QTemplate;
 interface
 
 uses
-  Classes, SysUtils, fptemplate, Utils;
+  Classes, SysUtils, fptemplate_RS, Utils;
 
 type
 

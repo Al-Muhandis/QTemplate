@@ -9,7 +9,7 @@
         <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
     </CompilerOptions>
-    <Version Release="1"/>
+    <Version Release="2"/>
     <Files Count="3">
       <Item1>
         <Filename Value="utils.pp"/>
@@ -20,8 +20,8 @@
         <UnitName Value="StdWebTemplate"/>
       </Item2>
       <Item3>
-        <Filename Value="qtemplate.pp"/>
-        <UnitName Value="QTemplate"/>
+        <Filename Value="fptemplate_rs.pas"/>
+        <UnitName Value="fptemplate_RS"/>
       </Item3>
     </Files>
     <RequiredPkgs Count="1">

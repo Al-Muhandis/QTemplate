@@ -8,7 +8,7 @@ unit qtemplatepkg;
 interface
 
 uses
-  Utils, StdWebTemplate, QTemplate, LazarusPackageIntf;
+  Utils, StdWebTemplate, fptemplate_RS, LazarusPackageIntf;
 
 implementation
 
